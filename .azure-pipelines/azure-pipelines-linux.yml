@@ -5,7 +5,7 @@
 jobs:
 - job: linux
   pool:
-    vmImage: ubuntu-latest
+    vmImage: $(vm_image)
   strategy:
     matrix:
       linux_ppc64le_r_base4.4:
@@ -19,6 +19,7 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
+        vm_image: ubuntu-latest
       linux_ppc64le_r_base4.5:
         CONFIG: linux_ppc64le_r_base4.5
         UPLOAD_PACKAGES: 'True'
@@ -30,6 +31,7 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
+        vm_image: ubuntu-latest
   timeoutInMinutes: 360
   variables: {}
 
