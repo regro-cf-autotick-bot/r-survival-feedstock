@@ -1,15 +1,15 @@
-{% set version = "3.8-12" %}
+{% set version = "3.8-13" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-survival
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/survival_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/survival/survival_{{ version }}.tar.gz
-  sha256: ebb70d9a4e7e8ad7f886a563184d6f079e64c0591a0bce219ae90967f0bdf994
+  sha256: c3a3781103abd8296bea42a7295852f2f4a5a1e10819ca5096ed01797ad040de
 
 build:
   number: 0
